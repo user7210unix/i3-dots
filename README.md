@@ -6,8 +6,6 @@
 
 This repository contains my personalized dotfiles setup for the i3 window manager, along with configurations for the Kitty terminal and some additional resources like fonts and a background image. Below is an overview of the structure and purpose of each file and directory.
 
-<div align="center">
-
 
 <img src="background/image.jpg" align="center" alt=" Preview" width="1050" style="display: block; margin: 32px auto; border: 2px solid #555; border-radius: 12px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">
 
