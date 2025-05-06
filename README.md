@@ -3,6 +3,8 @@
 # i3 Dotfiles
 ### A custom configured setup 
 
+<div align="left">
+
 
 This repository contains my personalized dotfiles setup for the i3 window manager, along with configurations for the Kitty terminal and some additional resources like fonts and a background image. Below is an overview of the structure and purpose of each file and directory.
 
