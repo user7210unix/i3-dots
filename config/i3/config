@@ -1,29 +1,23 @@
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 2
+set $mod Mod4 
 
-# set mod key (Mod1=<Alt>, Mod4=<Super>)
-set $mod Mod1
-
-#exec --no-startup-id picom --config ~/.config/picom/picom.conf
-#exec --no-startup-id xrdb -merge ~/.Xresources
+exec --no-startup-id picom --config ~/.config/picom/picom.conf
+exec --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id setxkbmap -option 
 exec --no-startup-id variety
 exec_always --no-startup-id autotiling
-exec_always --no-startup-id xborders
+#exec_always --no-startup-id xborders
 
 # STARTUP COMMANDS FROM XINITRC
-#exec --no-startup-id picom
-#exec --no-startup-id ~/.fehbg
+exec --no-startup-id ~/.fehbg
 exec --no-startup-id xset b off
 exec --no-startup-id dunst
-#exec --not-startup-id xsetroot -solid "#1E202D"
-# POLYBAR
-#exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # FONT
 font pango:JetbrainsMono Nerd Font Bold 13
 
-gaps outer 0
-gaps inner 10
+gaps outer 9
+gaps inner 9
 
  exec --no-startup-id dex --autostart --environment i3
 
@@ -42,33 +36,29 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 floating_modifier $mod
 
 # TERMINAL
-bindsym $mod+t exec kitty
-
-# BROWSER
-bindsym $mod+f exec firefox
-
-# FILE MANAGER
-bindsym $mod+e exec pcmanfm
-
+bindsym $mod+Return exec alacritty
 # KILL WINDOW
-bindsym $mod+q kill
+bindsym $mod+c kill
+
+bindsym $mod+e exec thunar
+
 
 # ROFI
-bindsym $mod+d exec --no-startup-id /home/user/.config/rofi/scripts/./launcher_t2
+bindsym $mod+r exec --no-startup-id ~/.config/rofi/scripts/rofi-main.sh 
 bindsym $mod+Tab exec --no-startup-id rofi -show window
-bindsym $mod+p exec --no-startup-id ~/.config/rofi/scripts/./powermenu_t2
+bindsym $mod+p exec --no-startup-id ~/.config/rofi/powermenu.sh
 
 # FOCUS
-bindsym $mod+Left focus left
-bindsym $mod+o focus down
+bindsym $mod+h focus left
+bindsym $mod+j focus down
 bindsym $mod+k focus up
-bindsym $mod+Right focus right
+bindsym $mod+n focus right
 
 # FOCUS + CURSOR
-bindsym $mod+j focus left
+bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
-bindsym $mod+l focus right
+bindsym $mod+Right focus right
 
 # MOVE FOCUSED WINDOW
 bindsym $mod+Shift+h move left
@@ -83,7 +73,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # enter fullscreen mode for the focused container
-bindsym $mod+i fullscreen toggle
+bindsym $mod+f fullscreen toggle
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -172,11 +162,11 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+#bindsym $mod+r mode "resize"
 
 
 #Lockscript
-bindsym $mod+c exec "~/.config/i3/lockscreen.sh"
+bindsym $mod+l exec "blurlock"
 
 # Color Scheme
 set $background      #990000
@@ -194,4 +184,3 @@ client.focused          $primary            $secondary          $foreground     
 client.focused_inactive $secondary          $secondary          $foreground          $secondary
 client.unfocused        $background_alt     $background_alt     $foreground          $background_alt
 client.urgent           $alert              $alert              $foreground          $alert
-
