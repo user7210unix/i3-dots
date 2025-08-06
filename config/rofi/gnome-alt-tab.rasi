@@ -1,0 +1,54 @@
+
+    * {
+        font: "Roboto 10";
+        background-color: rgba(46, 46, 46, 0.7); /* Semi-transparent dark background */
+        text-color: #ffffff;
+        selected-background-color: rgba(60, 110, 180, 0.8); /* GNOME-like blue selection */
+        selected-text-color: #ffffff;
+        border-color: rgba(60, 110, 180, 0.8);
+    }
+
+    window {
+        width: 30%;
+        location: center;
+        anchor: center;
+        border: 1px;
+        border-radius: 8px;
+        padding: 8px;
+        background-color: @background-color; /* Ensure transparency */
+        transparency: "real"; /* Enable ARGB for Picom blur */
+    }
+
+    listview {
+        lines: 4;
+        columns: 2; /* Grid layout for floating box effect */
+        fixed-height: false;
+        spacing: 10px;
+        scrollbar: false;
+    }
+
+    element {
+        padding: 6px;
+        border: 1px solid @border-color;
+        border-radius: 6px;
+        background-color: @background-color;
+        orientation: vertical; /* Stack icon and text vertically */
+        text-align: center;
+    }
+
+    element selected {
+        background-color: @selected-background-color;
+        text-color: @selected-text-color;
+    }
+
+    element-icon {
+        size: 32px;
+        horizontal-align: 0.5; /* Center icon */
+        margin-bottom: 4px;
+    }
+
+    element-text {
+        text-align: center;
+        font: "Roboto 8";
+    }
+    
